@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        COMPOSE_DOCKER_CLI_BUILD = 1
+        DOCKER_BUILDKIT = 1
+    }
+
     stages {
         stage('Checkout Code') {
             steps {
@@ -22,8 +27,8 @@ pipeline {
 
         stage('Verify Frontend') {
             steps {
-                // Wait a bit to ensure app is up
-                sh 'sleep 10'
+                echo 'Waiting for the frontend to come up...'
+                sh 'sleep 20'
                 sh 'curl -I http://localhost:3000 || true'
             }
         }
