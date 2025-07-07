@@ -1,18 +1,14 @@
 version: '3.8'
 
 services:
+  frontend:
+    image: prathap123/devops-frontend:latest
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
   backend:
-    build:
-      context: ./backend
+    image: prathap123/devops-backend:latest
     ports:
       - "5000:5000"
-    container_name: backend-app
-
-  frontend:
-    build:
-      context: ./frontend
-    ports:
-      - "3000:80"
-    container_name: frontend-app
-    depends_on:
-      - backend
+    restart: unless-stopped
