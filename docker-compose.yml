@@ -2,13 +2,13 @@ version: '3.8'
 
 services:
   frontend:
-    image: prathap123/devops-frontend:latest
+    image: prathapg6050/devops-frontend:latest
     ports:
       - "3000:3000"
     restart: unless-stopped
 
   backend:
-    image: prathap123/devops-backend:latest
+    image: prathapg6050/devops-backend:latest
     ports:
       - "5000:5000"
     restart: unless-stopped
