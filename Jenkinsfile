@@ -18,7 +18,7 @@ pipeline {
         stage('Verify Frontend') {
             steps {
                 sh 'sleep 10'
-                sh 'curl -I http://frontend:3000 || true'
+                sh 'curl -I http://localhost:3000 || true'
             }
         }
     }
