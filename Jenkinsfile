@@ -22,7 +22,13 @@ pipeline {
             }
         }
     }
-
+    post {
+        always {
+            echo 'Containers are up. Debug within 60 seconds...'
+            sh 'sleep 60'
+            sh 'docker compose down'
+        }
+    }
     post {
         always {
             echo 'Cleaning up containers...'
