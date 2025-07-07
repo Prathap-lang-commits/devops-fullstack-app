@@ -26,7 +26,7 @@ pipeline {
         always {
             echo 'Containers are up. Debug within 60 seconds...'
             sh 'sleep 60'
-            sh 'docker compose down'
+            //sh 'docker compose down'
         }
     }
 }
